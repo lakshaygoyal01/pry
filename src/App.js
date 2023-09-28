@@ -102,7 +102,7 @@ function App() {
   };
 
   const insertVariable = (variableName) => {
-    setInput(() => variableName);
+    setInput( variableName);
     setSuggestedVariables([]); // Clear suggestions
   };
 

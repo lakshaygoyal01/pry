@@ -139,7 +139,11 @@ function App() {
           onChange={handleVariableNumber2}
         />
       </div>
-      <p>Click on result to get the result</p>
+      
+        <p>1.Assign names and numbers in Variable names and numbers section 
+          </p>
+        <p>2.Enter values and operators in Enter Values section </p>
+        <p>3.Click on result to get the result</p>
     </div>
   );
 }

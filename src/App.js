@@ -9,9 +9,12 @@ function App() {
   const [variableNumber, setVariableNumber] = useState("");
   const [variableName2, setVariableName2] = useState("");
   const [variableNumber2, setVariableNumber2] = useState("");
+  const [variableName3, setVariableName3] = useState("");
+  const [variableNumber3, setVariableNumber3] = useState("");
   const [variables, setVariables] = useState({
     [variableName]: variableNumber,
     [variableName2]: variableNumber2,
+    [variableName3]: variableNumber3,
   });
 
   const handleInputChange = (e) => {
@@ -36,14 +39,29 @@ function App() {
   const handleVariableNumber2 = (e) => {
     setVariableNumber2(e.target.value);
   };
+  const handleVariableName3 = (e) => {
+    setVariableName3(e.target.value);
+    updateSuggestedVariables(e.target.value);
+  };
+  const handleVariableNumber3 = (e) => {
+    setVariableNumber3(e.target.value);
+  };
 
   // Update variables when input fields change
   React.useEffect(() => {
     setVariables({
       [variableName]: variableNumber,
       [variableName2]: variableNumber2,
+      [variableName3]: variableNumber3,
     });
-  }, [variableName, variableNumber, variableName2, variableNumber2]);
+  }, [
+    variableName,
+    variableNumber,
+    variableName2,
+    variableNumber2,
+    variableName3,
+    variableNumber3,
+  ]);
 
   const handleButtonClick = (value) => {
     setInput((prevInput) => prevInput + value);
@@ -139,11 +157,23 @@ function App() {
           onChange={handleVariableNumber2}
         />
       </div>
-      
-        <p>1.Assign names and numbers in Variable names and numbers section 
-          </p>
-        <p>2.Enter values and operators in Enter Values section </p>
-        <p>3.Click on result to get the result</p>
+      <div>
+        <input
+          type='text'
+          value={variableName3}
+          placeholder='Variable Name 3'
+          onChange={handleVariableName3}
+        />
+        <input
+          type='text'
+          value={variableNumber3}
+          placeholder='Variable Number 3'
+          onChange={handleVariableNumber3}
+        />
+      </div>
+      <p>1.Assign names and numbers in Variable names and numbers section</p>
+      <p>2.Enter values and operators in Enter Values section </p>
+      <p>3.Click on result to get the result</p>
     </div>
   );
 }

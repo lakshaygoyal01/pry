@@ -139,6 +139,7 @@ function App() {
           onChange={handleVariableNumber2}
         />
       </div>
+      <p>Click on result to get the result</p>
     </div>
   );
 }
